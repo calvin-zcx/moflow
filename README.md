@@ -20,15 +20,15 @@ conda create --name moflow python pandas matplotlib
 conda activate moflow
 conda install pytorch torchvision cudatoolkit=10.2 -c pytorch 
 conda install rdkit
-pip install cairosvg
-pip install tqdm
 conda install orderedset
 conda install tabulate
 conda install networkx
+pip install cairosvg
+pip install tqdm
 ```
 
 ## 1. Data Preprocessing
-To generate molecular graph from SMILES strings
+To generate molecular graphs from SMILES strings
 ```
 cd data
 python data_preprocess.py --data_name qm9
@@ -247,4 +247,7 @@ python optimize_property.py -snapshot model_snapshot_epoch_200  --hyperparams_pa
 #    success rate: 0.565
 ```
 More configurations please refer to our codes optimize_property.py and the optimization chapter in our paper.
+#### One illustration of optimizing plogp
+![optimiation plogp](mflow/fig/copt.png)
+
 
