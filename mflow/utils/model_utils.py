@@ -1,6 +1,6 @@
 import torch
 import numpy as np
-from chainer_chemistry.dataset.preprocessors import GGNNPreprocessor
+from data.smile_to_graph import GGNNPreprocessor
 from rdkit import Chem
 
 from data import transform_qm9
@@ -13,18 +13,8 @@ def load_model(snapshot_path, model_params, debug=False):
     if debug:
         print("Hyper-parameters:")
         model_params.print()
-    # model = GraphNvpModel(model_params)
     model = Model(model_params)
 
-    # if snapshot_path.endswith('.npz'):
-    #     chainer.serializers.load_npz(snapshot_path, model)
-    # else:
-    #     chainer.serializers.load_npz(
-    #         snapshot_path, model, path='updater/optimizer:main/', strict=False)
-    # if torch.cuda.device_count() == 1:
-    #     model.load_state_dict(torch.load(snapshot_path, map_location='cuda:0') )
-    # else:
-    #     model.load_state_dict(torch.load(snapshot_path))
     device = torch.device('cpu')
     model.load_state_dict(torch.load(snapshot_path, map_location=device))
     return model
@@ -52,7 +42,6 @@ def smiles_to_adj(mol_smiles, data_name='qm9'):
 
 def get_latent_vec(model, mol_smiles, data_name='qm9'):
     adj, atoms = smiles_to_adj(mol_smiles, data_name)
-    # with chainer.no_backprop_mode():
     with torch.no_grad():
         z = model(adj, atoms)
     z = np.hstack([z[0][0].cpu().numpy(), z[0][1].cpu().numpy()]).squeeze(0) # change later !!! according to debug
