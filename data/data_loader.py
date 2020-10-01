@@ -68,26 +68,6 @@ class NumpyTupleDataset(Dataset):
     def get_datasets(self):
         return self._datasets
 
-    # @property
-    # def features(self):
-    #     """Extract features according to the specified index.
-    #
-    #     - axis 0 is used to specify dataset id (`i`-th dataset)
-    #     - axis 1 is used to specify feature index
-    #
-    #     .. admonition:: Example
-    #
-    #        >>> import numpy
-    #        >>> from chainer_chemistry.datasets import NumpyTupleDataset
-    #        >>> x = numpy.array([0, 1, 2], dtype=numpy.float32)
-    #        >>> t = x * x
-    #        >>> numpy_tuple_dataset = NumpyTupleDataset(x, t)
-    #        >>> targets = numpy_tuple_dataset.features[:, 1]
-    #        >>> print('targets', targets)  # We can extract only target value
-    #        targets [0, 1, 4]
-    #
-    #     """
-    #     return self._features_indexer
 
     @classmethod
     def save(cls, filepath, numpy_tuple_dataset):

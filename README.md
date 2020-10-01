@@ -24,6 +24,7 @@ conda install orderedset
 conda install tabulate
 conda install networkx
 conda install scipy
+conda install seaborn
 pip install cairosvg
 pip install tqdm
 ```

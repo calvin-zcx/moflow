@@ -72,32 +72,3 @@ else:
 
 NumpyTupleDataset.save(os.path.join(data_dir, '{}_{}_kekulized_ggnp.npz'.format(data_name, data_type)), dataset)
 print('Total time:', time.strftime("%H:%M:%S", time.gmtime(time.time()-start_time)) )
-
-#
-# # dataset_old = NumpyTupleDataset.load(os.path.join(data_dir, 'qm9_relgcn_kekulized_ggnp.npz'))
-# dataset_new = NumpyTupleDataset.load(os.path.join(data_dir,
-#                                                   '{}_{}_kekulized_ggnp_new.npz'.format(data_name, data_type)))
-#
-#
-# dataset_old = NumpyTupleDataset.load(os.path.join(data_dir,
-#                                                   '{}_{}_kekulized_ggnp.npz'.format(data_name, data_type)))
-# print('len(dataset):', len(dataset))
-# print('len(dataset_old):', len(dataset_old))
-#
-# # check consistency
-# assert len(dataset) == len(dataset_old)
-# for i in tqdm(range(len(dataset))):
-#     if not (dataset[i][0] == dataset_old[i][0]).all():
-#         print('dataset[i][0]', i, 0, smiles[i])
-#     if not (dataset[i][1] == dataset_old[i][1]).all():
-#         print('dataset[i][1]', i, 1, smiles[i])
-#     if np.abs(dataset[i][2] - dataset_old[i][2]).mean() > 1e-5:
-#         print('dataset[i][2]', i, 2, smiles[i])
-#
-# from rdkit import Chem
-# smiles = r'Cc1ccccc1/C=N\n1cnnc1'
-# def s_2_g(smiles):
-#     mol = Chem.MolFromSmiles(smiles)
-#     canonical_smiles, mol = preprocessor.prepare_smiles_and_mol(mol)
-#     input_features = preprocessor.get_input_features(mol)
-#     return input_features
