@@ -27,7 +27,10 @@ conda install scipy
 pip install cairosvg
 pip install tqdm
 ```
-
+To clone code from this project, say
+```
+git clone https://github.com/calvin-zcx/moflow.git moflow
+```
 ## 1. Data Preprocessing
 To generate molecular graphs from SMILES strings
 ```
