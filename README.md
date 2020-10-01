@@ -23,6 +23,7 @@ conda install rdkit
 conda install orderedset
 conda install tabulate
 conda install networkx
+conda install scipy
 pip install cairosvg
 pip install tqdm
 ```

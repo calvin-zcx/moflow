@@ -172,7 +172,7 @@ def train():
     model = model.to(device)
 
     # Datasets:
-    dataset = NumpyTupleDataset(os.path.join(args.data_dir, data_file), transform=transform_fn)  # 133885
+    dataset = NumpyTupleDataset.load(os.path.join(args.data_dir, data_file), transform=transform_fn)  # 133885
     if len(valid_idx) > 0:
         train_idx = [t for t in range(len(dataset)) if t not in valid_idx]  # 120803 = 133885-13082
         # n_train = len(train_idx)  # 120803
