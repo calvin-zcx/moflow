@@ -5,6 +5,9 @@ Please refer to our paper:
 Zang, Chengxi, and Fei Wang. "MoFlow: an invertible flow model for generating molecular graphs." In Proceedings of the 26th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining, pp. 617-626. 2020.
 
 ```
+https://arxiv.org/abs/2006.10137
+```
+```
 @inproceedings{zang2020moflow,
   title={MoFlow: an invertible flow model for generating molecular graphs},
   author={Zang, Chengxi and Wang, Fei},
