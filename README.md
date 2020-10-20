@@ -19,17 +19,17 @@ https://arxiv.org/abs/2006.10137
 
 ## 0. Install Libs:
 ```
-conda create --name moflow python pandas matplotlib
+conda create --name moflow python pandas matplotlib    (conda 4.6.7, python 3.8.5)
 conda activate moflow
-conda install pytorch torchvision cudatoolkit=10.2 -c pytorch 
-conda install rdkit
-conda install orderedset
-conda install tabulate
-conda install networkx
-conda install scipy
-conda install seaborn
-pip install cairosvg
-pip install tqdm
+conda install pytorch torchvision cudatoolkit=10.2 -c pytorch (pytorch 1.6.0, torchvision 0.7.0)
+conda install rdkit  (rdkit 2020.03.6)
+conda install orderedset  (orderset 2.0.3)
+conda install tabulate  (tabulate 0.8.7)
+conda install networkx  (networkx 2.5)
+conda install scipy  (scipy 1.5.0)
+conda install seaborn   
+pip install cairosvg (cairosvg 2.4.2)
+pip install tqdm  (tqdm 4.50.0)
 ```
 To clone code from this project, say
 ```
